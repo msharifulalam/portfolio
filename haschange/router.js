@@ -52,7 +52,7 @@ Router.prototype = {
 					scope.goToRoute(route.htmllink);
 					
 					let root1 = route;
-					setTimeout(() => root1.func() , 1000);
+					setTimeout(() => root1.func() , 2000);
 				}
 			}
 
