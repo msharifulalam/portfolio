@@ -18,9 +18,11 @@
 	// Show hide sidebar menu
 	// Let this snippet run before your hashchange event binding code
 	
-	window.addEventListener("hashchange", function(event){
-		$('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
-	});
+	if(document.body.offsetWidth < 767){
+		window.addEventListener("hashchange", function(event){
+			$('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
+		});
+	}
 	
 	$('.mobile_menu').on('click', function(e){
 		e.preventDefault();
@@ -157,6 +159,25 @@
 		demo3.start();
 		demo4.start();
 	}
+	
+	// Portfolio image on mobile
+	window.matchMedia('(max-width: 600px)').addEventListener('load change', (e) => {
+		if(e.matches){
+			//only execute if the matches is true
+			let anchorAjaxGridItem = document.querySelector('.ajax-loader'),
+			    timeClicked = 0;
+			anchorAjaxGridItem.addEventListener('click', (event) => {
+				timeClicked++;
+				if(timeClicked > 1){
+					window.location = this.href;
+					return false;
+				}else{
+					return false;
+				}
+			});
+		}
+		return;
+	});
 	
 
 
