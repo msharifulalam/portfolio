@@ -167,10 +167,10 @@
 		let anchorAjaxGridItem = $('.ajax-loader'),
 		    timeClicked = 0;
 		anchorAjaxGridItem.on('click', (event) => {
-// 		    event.preventDefault();
+		    event.preventDefault();
 		    timeClicked++;
 		    if(timeClicked > 1){
-			    console.log("timeclicked: " + timeClicked);
+			console.log("timeclicked: " + timeClicked);
 			window.location = this.href;
 			return false;
 		    }else{
