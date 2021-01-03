@@ -19,7 +19,7 @@
 	// Let this snippet run before your hashchange event binding code
 	
 	window.addEventListener("hashchange", function(event){
-		console.log(event);
+		$('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
 	});
 	
 	$('.mobile_menu').on('click', function(e){
