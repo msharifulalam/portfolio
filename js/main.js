@@ -166,17 +166,19 @@
 		// double click for mobile version
 		let anchorAjaxGridItem = $('.ajax-loader'),
 		    timeClicked = 0;
-		anchorAjaxGridItem.on('click', (event) => {
-		    event.preventDefault();
-		    timeClicked++;
-		    if(timeClicked > 1){
-			console.log("timeclicked: " + timeClicked);
-			window.location = this.href;
-			return false;
-		    }else{
-			    console.log("clicked anchor false statement");
-			return false;
-		    }
+		anchorAjaxGridItem.each((evnt) => {
+			$(this).on('click', (event) => {
+				event.preventDefault();
+				timeClicked++;
+				if(timeClicked > 1){
+					console.log("timeclicked: " + timeClicked);
+					window.location = this.href;
+					return false;
+				}else{
+					console.log("clicked anchor false statement");
+					return false;
+				}
+			});
 		});
 	    }
 	    console.log(e.matches);
