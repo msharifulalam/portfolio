@@ -162,9 +162,9 @@
 		    $('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
 		});
 		// double click for mobile version
-		let anchorAjaxGridItem = document.querySelector('.ajax-loader'),
+		let anchorAjaxGridItem = $('.ajax-loader'),
 		    timeClicked = 0;
-		anchorAjaxGridItem.addEventListener('click', (event) => {
+		anchorAjaxGridItem.on('click', (event) => {
 		    event.preventDefault();
 		    timeClicked++;
 		    if(timeClicked > 1){
