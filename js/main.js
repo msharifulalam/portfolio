@@ -155,39 +155,33 @@
 		demo4.start();
 	}
 	
+	function executeOnMobile(e) {
+	    if (e.matches) {
+		// left menu hiding functionality
+		window.addEventListener("hashchange", function(event) {
+		    $('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
+		});
+		// double click for mobile version
+		let anchorAjaxGridItem = document.querySelector('.ajax-loader'),
+		    timeClicked = 0;
+		anchorAjaxGridItem.addEventListener('click', (event) => {
+		    event.preventDefault();
+		    timeClicked++;
+		    if(timeClicked > 1){
+			window.location = this.href;
+			return false;
+		    }else{
+			return false;
+		    }
+		});
+	    }
+	    // console.log(e.matches);
+	    return;
+	}
+	
 	// Portfolio image on mobile
-	window.matchMedia('(max-width: 600px)').addEventListener('load change', (e) => {
-		//only execute if the matches is true
-		if(e.matches){
-			// left menu hiding functionality
-			window.addEventListener("hashchange", function(event){
-				$('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
-			});
-			// double click for mobile version
-// 			let anchorAjaxGridItem = document.querySelector('.ajax-loader'),
-// 			    timeClicked = 0;
-// 			anchorAjaxGridItem.addEventListener('click', (event) => {
-// 				event.preventDefault();
-// 				timeClicked++;
-// 				if(!timeClicked > 1){
-// 					window.location = this.href;
-// 					return false;
-// 				}else{
-// 					return false;
-// 				}
-// 			});
-			
-			$('.ajax-loader').click(function() {
-				return false;
-			}).dblclick(function() {
-				console.log(this.href);
-				window.location = this.href;
-				return false;
-			});
-		}
-		console.log(e.matches);
-		return;
-	});
+	window.matchMedia('(max-width: 600px)').addEventListener('load', executeOnMobile);
+	window.matchMedia('(max-width: 600px)').addEventListener('change', executeOnMobile);
 	
 
 
