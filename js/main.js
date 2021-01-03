@@ -18,11 +18,6 @@
 	// Show hide sidebar menu
 	// Let this snippet run before your hashchange event binding code
 	
-	if(document.body.offsetWidth < 767){
-		window.addEventListener("hashchange", function(event){
-			$('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
-		});
-	}
 	
 	$('.mobile_menu').on('click', function(e){
 		e.preventDefault();
@@ -162,8 +157,13 @@
 	
 	// Portfolio image on mobile
 	window.matchMedia('(max-width: 600px)').addEventListener('load change', (e) => {
+		//only execute if the matches is true
 		if(e.matches){
-			//only execute if the matches is true
+			// left menu hiding functionality
+			window.addEventListener("hashchange", function(event){
+				$('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
+			});
+			// double click for mobile version
 			let anchorAjaxGridItem = document.querySelector('.ajax-loader'),
 			    timeClicked = 0;
 			anchorAjaxGridItem.addEventListener('click', (event) => {
