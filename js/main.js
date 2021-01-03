@@ -157,25 +157,29 @@
 	
 	function executeOnMobile(e) {
 	    if (e.matches) {
+		console.log(e.matches);
 		// left menu hiding functionality
 		window.addEventListener("hashchange", function(event) {
+			console.log("hashchanged");
 		    $('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
 		});
 		// double click for mobile version
 		let anchorAjaxGridItem = $('.ajax-loader'),
 		    timeClicked = 0;
 		anchorAjaxGridItem.on('click', (event) => {
-		    event.preventDefault();
+// 		    event.preventDefault();
 		    timeClicked++;
 		    if(timeClicked > 1){
+			    console.log("timeclicked: " + timeClicked);
 			window.location = this.href;
 			return false;
 		    }else{
+			    console.log("clicked anchor false statement");
 			return false;
 		    }
 		});
 	    }
-	    // console.log(e.matches);
+	    console.log(e.matches);
 	    return;
 	}
 	
