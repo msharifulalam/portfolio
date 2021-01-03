@@ -164,18 +164,28 @@
 				$('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
 			});
 			// double click for mobile version
-			let anchorAjaxGridItem = document.querySelector('.ajax-loader'),
-			    timeClicked = 0;
-			anchorAjaxGridItem.addEventListener('click', (event) => {
-				timeClicked++;
-				if(timeClicked > 1){
-					window.location = this.href;
-					return false;
-				}else{
-					return false;
-				}
+// 			let anchorAjaxGridItem = document.querySelector('.ajax-loader'),
+// 			    timeClicked = 0;
+// 			anchorAjaxGridItem.addEventListener('click', (event) => {
+// 				event.preventDefault();
+// 				timeClicked++;
+// 				if(!timeClicked > 1){
+// 					window.location = this.href;
+// 					return false;
+// 				}else{
+// 					return false;
+// 				}
+// 			});
+			
+			$('.ajax-loader').click(function() {
+				return false;
+			}).dblclick(function() {
+				console.log(this.href);
+				window.location = this.href;
+				return false;
 			});
 		}
+		console.log(e.matches);
 		return;
 	});
 	
