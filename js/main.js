@@ -30,11 +30,6 @@
 
     });
 
-
-    if (window.matchMedia("(max-width: 767px)").matches === true) {
-        $(".sidebar-left-content").removeClass("visible-xs").addClass("hidden-xs");
-    }
-
     // state functions
     // function hashpages(){
     //        $("#pagingbita").addHash("index", "index-content.html", function(){
