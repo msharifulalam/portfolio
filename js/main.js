@@ -155,39 +155,28 @@
 		demo4.start();
 	}
 	
-	function executeOnMobile(e) {
-	    if (e.matches) {
-		console.log(e.matches);
+	function executeOnMobile() {
+// 	    if (e.matches) {
+// 		console.log(e.matches);
 		// left menu hiding functionality
 		window.addEventListener("hashchange", function(event) {
 			console.log("hashchanged");
 		    $('.sidebar-left-content').toggleClass('hidden-xs visible-xs');
 		});
 		// double click for mobile version
-		let anchorAjaxGridItem = $('.ajax-loader'),
-		    timeClicked = 0;
-		anchorAjaxGridItem.each((evnt) => {
-			$(this).on('click', (event) => {
-				event.preventDefault();
-				timeClicked++;
-				if(timeClicked > 1){
-					console.log("timeclicked: " + timeClicked);
-					window.location = this.href;
-					return false;
-				}else{
-					console.log("clicked anchor false statement");
-					return false;
-				}
-			});
-		});
-	    }
-	    console.log(e.matches);
-	    return;
+		
+// 	    }
+// 	    console.log(e.matches);
+// 	    return;
 	}
 	
 	// Portfolio image on mobile
-	window.matchMedia('(max-width: 600px)').addEventListener('load', executeOnMobile);
-	window.matchMedia('(max-width: 600px)').addEventListener('change', executeOnMobile);
+// 	window.matchMedia('(max-width: 600px)').addEventListener('load', executeOnMobile);
+// 	window.matchMedia('(max-width: 600px)').addEventListener('change', executeOnMobile);
+	
+	if(window.matchMedia('(max-width: 767px)')){
+		executeOnMobile();
+	}
 	
 
 
