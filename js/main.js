@@ -30,6 +30,11 @@
 
     });
 
+
+    if (window.matchMedia("(max-width: 767px)").matches === true) {
+        $(".sidebar-left-content").removeClass("visible-xs").addClass("hidden-xs");
+    }
+
     // state functions
     // function hashpages(){
     //        $("#pagingbita").addHash("index", "index-content.html", function(){
@@ -164,7 +169,8 @@
                 arr.push(e.currentTarget.href);
                 console.log("C is: " + c);
                 if (c === 2 && arr[0] === e.currentTarget.href) {
-                    location.assign(arr[0]);
+                    console.log(arr[0]);
+                    console.log("Success!");
                     return false;
                 } else {
                     c = 1;
