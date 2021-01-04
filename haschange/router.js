@@ -34,9 +34,7 @@ Router.prototype = {
 
             window.addEventListener('hashchange', function(e) {
                 scope.hasChanged(scope, r);
-                if (window.matchMedia("(max-width: 767px)").matches === true) {
-                    $(".sidebar-left-content").toggleClass("hidden-xs visible-xs");
-                }
+                
             });
 
         })(this, r);
