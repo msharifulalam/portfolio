@@ -174,7 +174,7 @@
 // 	window.matchMedia('(max-width: 600px)').addEventListener('load', executeOnMobile);
 // 	window.matchMedia('(max-width: 600px)').addEventListener('change', executeOnMobile);
 	
-	if(window.matchMedia('(max-width: 767px)')){
+	if(window.matchMedia('(max-width: 767px)').matches){
 		executeOnMobile();
 	}
 	
