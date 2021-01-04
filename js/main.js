@@ -164,8 +164,7 @@
                 arr.push(e.currentTarget.href);
                 console.log("C is: " + c);
                 if (c === 2 && arr[0] === e.currentTarget.href) {
-                    console.log(arr[0]);
-                    console.log("Success!");
+                    location.assign(arr[0]);
                     return false;
                 } else {
                     c = 1;
